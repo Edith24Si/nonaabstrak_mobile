@@ -12,6 +12,11 @@ class WelcomeActivityTugas3 : AppCompatActivity() {
         binding = ActivityWelcomeTugas3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val judul=intent.getStringExtra("Judul_Halaman")
+        val deskripsi=intent.getStringExtra("Description")
+        binding.JudulHalaman.text="$judul"
+        binding.Description.text="$deskripsi"
+
         binding.btnKembali.setOnClickListener {
             finish()
         }
