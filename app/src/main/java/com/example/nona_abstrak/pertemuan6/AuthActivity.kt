@@ -17,24 +17,38 @@ class AuthActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("RegulasiDesaPref", MODE_PRIVATE)
 
+        // Tombol ke Register
+        binding.tvRegister.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
         binding.btnLogin.setOnClickListener {
-            val username = binding.edtUsername.text.toString()
-            val password = binding.edtPassword.text.toString()
+            val username = binding.etUsername.text.toString()
+            val password = binding.etPassword.text.toString()
 
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Username dan password wajib diisi!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Validasi: username == password
-            if (username == password) {
-                // Simpan status login
+            // Ambil data dari SharedPreferences
+            val regUsername = sharedPref.getString("reg_username", "") ?: ""
+            val regPassword = sharedPref.getString("reg_password", "") ?: ""
+
+            val bolehLogin = when {
+                // Rule 1: username == password
+                username == password -> true
+                // Rule 2: username & password sesuai data registrasi
+                username == regUsername && password == regPassword -> true
+                else -> false
+            }
+
+            if (bolehLogin) {
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", username)
                 editor.apply()
 
-                // Arahkan ke BaseActivity
                 startActivity(Intent(this, BaseActivity::class.java))
                 finish()
             } else {
