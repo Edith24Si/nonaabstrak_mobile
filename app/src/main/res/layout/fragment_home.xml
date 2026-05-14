@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5">
 
+
+    <!-- Wave Header Background -->
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -95,6 +106,15 @@
                 android:text="📋 Pertemuan 5"
                 android:backgroundTint="#388E3C"
                 android:layout_marginBottom="20dp" />
+
+            <Button
+                android:id="@+id/btnToNinth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📋 Pertemuan 9"
+                android:backgroundTint="#388E3C"
+                android:layout_marginBottom="20dp" />
+
 
             <Button
                 android:id="@+id/btnWebView"

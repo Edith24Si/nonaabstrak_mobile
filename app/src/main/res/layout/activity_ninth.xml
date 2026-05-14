@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#2E7D32"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="#FFFFFF" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- SECTION: TextInputLayout & MaterialButton -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. TextInputLayout &amp; MaterialButton"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                app:errorEnabled="true"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                android:layout_marginBottom="12dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:layout_marginBottom="20dp"
+                app:cornerRadius="8dp" />
+
+            <!-- SECTION: Chip & ChipGroup -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. Chip &amp; ChipGroup"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipTerbaru"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Terbaru" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPenting"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Penting" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBelumDibaca"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum Dibaca" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSemua"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Semua" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- SECTION: Background Drawable -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. Background Drawable"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etCustomBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="EditText dengan custom background"
+                android:background="@drawable/bg_rounded_input"
+                android:padding="12dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- SECTION: GridLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. GridLayout"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:columnCount="3"
+                app:useDefaultMargins="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Dokumen"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    android:layout_margin="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Warga"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    android:layout_margin="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Kategori"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    android:layout_margin="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Riwayat"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    android:layout_margin="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Laporan"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    android:layout_margin="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Pengaturan"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    android:layout_margin="4dp" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

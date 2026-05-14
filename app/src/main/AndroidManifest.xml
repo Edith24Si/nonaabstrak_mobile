@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Nonaabstrak"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".fragment.MoreFragment"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan9.NinthActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan6.OtpActivity"
             android:exported="false" />
         <activity

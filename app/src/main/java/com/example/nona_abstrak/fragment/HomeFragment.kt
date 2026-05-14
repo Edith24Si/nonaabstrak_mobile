@@ -12,6 +12,7 @@ import com.example.nona_abstrak.databinding.FragmentHomeBinding
 import com.example.nona_abstrak.pertemuan5.FifthActivity
 import com.example.nona_abstrak.pertemuan6.AuthActivity
 import com.example.nona_abstrak.pertemuan5.WebViewActivity
+import com.example.nona_abstrak.pertemuan9.NinthActivity
 // IMPORT BARU (Pastikan nama package sesuai dengan folder tugasmu)
 import com.example.nona_abstrak.tugaspertemuan3.LoginActivityTugas3
 import com.example.nona_abstrak.tugasPertemuan4.HalamanUtama
@@ -27,6 +28,7 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,6 +60,10 @@ class HomeFragment : Fragment() {
         // Pertemuan 5
         binding.btnToFifth.setOnClickListener {
             startActivity(Intent(requireContext(), FifthActivity::class.java))
+        }
+
+        binding.btnToNinth.setOnClickListener {
+            startActivity(Intent(requireContext(), NinthActivity::class.java))
         }
         // --- LOGOUT ---
         binding.btnLogout.setOnClickListener {
