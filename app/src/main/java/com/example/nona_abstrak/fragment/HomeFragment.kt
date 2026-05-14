@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
         binding.btnToFifth.setOnClickListener {
             startActivity(Intent(requireContext(), FifthActivity::class.java))
         }
-
+        //pertemuan 9
         binding.btnToNinth.setOnClickListener {
             startActivity(Intent(requireContext(), NinthActivity::class.java))
         }
