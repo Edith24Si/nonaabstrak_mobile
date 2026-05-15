@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5">
 
-
-    <!-- Wave Header Background -->
+    <!-- Wave Header -->
     <View
         android:id="@+id/background_header"
         android:layout_width="0dp"
@@ -17,119 +16,149 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#2E7D32"
-        android:elevation="4dp"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="#FFFFFF"
-        app:subtitleTextColor="#C8E6C9" />
+        app:titleTextColor="#FFFFFF" />
 
+    <!-- ScrollView konten -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/background_header">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="16dp">
 
-            <LinearLayout
+            <!-- TextInputLayout Search -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/searchInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#2E7D32"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:layout_marginBottom="20dp">
+                android:hint="Cari Data Desa"
+                android:layout_marginBottom="12dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="🏛️ Portal Regulasi Desa"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sistem pengelolaan produk hukum desa yang terintegrasi dan modern"
-                    android:textColor="#C8E6C9"
-                    android:textSize="13sp"
-                    android:layout_marginTop="6dp" />
-            </LinearLayout>
-
-            <TextView
+            <!-- ChipGroup Filter -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupKategori"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Menu Navigasi"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#1B5E20"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="16dp"
+                app:singleSelection="true">
 
-            <Button
-                android:id="@+id/btnToSecond"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPertanian"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Pertanian" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPengumuman"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pengumuman" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- GridLayout Menu -->
+            <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="📚 Pertemuan 2"
-                android:backgroundTint="#2E7D32"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="16dp"
+                app:columnCount="2"
+                app:useDefaultMargins="true">
 
-            <Button
-                android:id="@+id/btnToThird"
+                <!-- Bumdes -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBumdes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Bumdes"
+                    android:drawableTop="@android:drawable/ic_menu_agenda"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:cornerRadius="8dp"
+                    android:layout_margin="4dp" />
+
+                <!-- Profil -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnProfil"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Profil"
+                    android:drawableTop="@android:drawable/ic_menu_myplaces"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:cornerRadius="8dp"
+                    android:layout_margin="4dp" />
+
+                <!-- Forum -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnForum"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Forum"
+                    android:drawableTop="@android:drawable/ic_menu_send"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:cornerRadius="8dp"
+                    android:layout_margin="4dp" />
+
+                <!-- Web Desa -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnWebView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Web Desa"
+                    android:drawableTop="@android:drawable/ic_menu_mapmode"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:cornerRadius="8dp"
+                    android:layout_margin="4dp" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <!-- Tentang Aplikasi Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTentangAplikasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="🔑 Pertemuan 3"
-                android:backgroundTint="#2E7D32"
-                android:layout_marginBottom="10dp" />
+                android:text="Tentang Aplikasi"
+                android:layout_marginBottom="8dp"
+                app:icon="@android:drawable/ic_menu_info_details"
+                app:cornerRadius="8dp" />
 
-            <Button
-                android:id="@+id/btnToFourth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🏠 Pertemuan 4"
-                android:backgroundTint="#2E7D32"
-                android:layout_marginBottom="10dp" />
-
-            <Button
-                android:id="@+id/btnToFifth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="📋 Pertemuan 5"
-                android:backgroundTint="#388E3C"
-                android:layout_marginBottom="20dp" />
-
-            <Button
-                android:id="@+id/btnToNinth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="📋 Pertemuan 9"
-                android:backgroundTint="#388E3C"
-                android:layout_marginBottom="20dp" />
-
-
-            <Button
-                android:id="@+id/btnWebView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🌐 Buka Portal Regulasi Desa"
-                android:backgroundTint="#1B5E20"
-                android:layout_marginBottom="10dp" />
-
-            <Button
+            <!-- Keluar Button -->
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="🚪 Logout"
-                android:backgroundTint="#C62828" />
+                android:text="Keluar Aplikasi"
+                android:backgroundTint="#C62828"
+                app:icon="@android:drawable/ic_menu_close_clear_cancel"
+                app:cornerRadius="8dp" />
 
         </LinearLayout>
     </ScrollView>

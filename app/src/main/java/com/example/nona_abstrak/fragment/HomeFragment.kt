@@ -5,17 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.nona_abstrak.Home.pertemuan2.SecondActivity
-import com.example.nona_abstrak.databinding.FragmentHomeBinding
-import com.example.nona_abstrak.pertemuan5.FifthActivity
-import com.example.nona_abstrak.pertemuan6.AuthActivity
 import com.example.nona_abstrak.pertemuan5.WebViewActivity
-import com.example.nona_abstrak.pertemuan9.NinthActivity
-// IMPORT BARU (Pastikan nama package sesuai dengan folder tugasmu)
-import com.example.nona_abstrak.tugaspertemuan3.LoginActivityTugas3
-import com.example.nona_abstrak.tugasPertemuan4.HalamanUtama
+import com.example.nona_abstrak.databinding.FragmentHomeBinding
+import com.example.nona_abstrak.pertemuan6.AuthActivity
+import com.example.nona_abstrak.pertemuan_9.SettingActivity
+import com.google.android.material.chip.Chip
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -28,50 +25,54 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Toolbar
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            title = "Home Bina Desa"
+        }
+
+        // ChipGroup
+        binding.chipGroupKategori.setOnCheckedStateChangeListener { group, checkedIds ->
+            val selectedChipId = checkedIds.firstOrNull()
+            if (selectedChipId != null) {
+                val chip = group.findViewById<Chip>(selectedChipId)
+                Toast.makeText(requireContext(), "Filter: ${chip.text}", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // GridLayout buttons
+        binding.btnBumdes.setOnClickListener {
+            Toast.makeText(requireContext(), "Bumdes", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnProfil.setOnClickListener {
+            Toast.makeText(requireContext(), "Profil", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnForum.setOnClickListener {
+            Toast.makeText(requireContext(), "Forum", Toast.LENGTH_SHORT).show()
+        }
+
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(requireContext(), WebViewActivity::class.java))
         }
-        // Setup Toolbar
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
-            title = "Portal Regulasi Desa"
-            subtitle = "Bina Desa - Sistem Informasi"
-        }
-        // --- TOMBOL NAVIGASI PERTEMUAN ---
 
-        // Pertemuan 2
-        binding.btnToSecond.setOnClickListener {
-            startActivity(Intent(requireContext(), SecondActivity::class.java))
+        // Tentang Aplikasi
+        binding.btnTentangAplikasi.setOnClickListener {
+            startActivity(Intent(requireContext(), SettingActivity::class.java))
         }
-        // Pertemuan 3 (LOGIN TUGAS 3)
-        binding.btnToThird.setOnClickListener {
-            startActivity(Intent(requireContext(), LoginActivityTugas3::class.java))
-        }
-        // Pertemuan 4 (HALAMAN UTAMA TUGAS 4)
-        binding.btnToFourth.setOnClickListener {
-            startActivity(Intent(requireContext(), HalamanUtama::class.java))
-        }
-        // Pertemuan 5
-        binding.btnToFifth.setOnClickListener {
-            startActivity(Intent(requireContext(), FifthActivity::class.java))
-        }
-        //pertemuan 9
-        binding.btnToNinth.setOnClickListener {
-            startActivity(Intent(requireContext(), NinthActivity::class.java))
-        }
-        // --- LOGOUT ---
+
+        // Logout
         binding.btnLogout.setOnClickListener {
             val sharedPref = requireContext().getSharedPreferences("RegulasiDesaPref", AppCompatActivity.MODE_PRIVATE)
             val editor = sharedPref.edit()
             editor.clear()
             editor.apply()
-            // Kembali ke AuthActivity
             startActivity(Intent(requireContext(), AuthActivity::class.java))
             requireActivity().finish()
         }

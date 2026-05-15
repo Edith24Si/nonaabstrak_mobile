@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nona_abstrak.databinding.ActivityNinthBinding
+import com.example.nona_abstrak.pertemuan_9.MessageAdapter
+import com.example.nona_abstrak.pertemuan_9.MessageModel
 import com.google.android.material.chip.Chip
 
 class NinthActivity : AppCompatActivity() {
