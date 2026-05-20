@@ -23,6 +23,7 @@ class AboutFragment : Fragment() {
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Tentang Aplikasi"
+
         }
     }
     override fun onDestroyView() {
