@@ -1,12 +1,13 @@
 package com.example.nona_abstrak.fragment
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.nona_abstrak.R
 import com.example.nona_abstrak.databinding.FragmentMessageBinding
+import com.example.nona_abstrak.fragment.tutorial.TutorialMessageActivity
 import com.example.nona_abstrak.pertemuan_9.MessageAdapter
 import com.example.nona_abstrak.pertemuan_9.MessageModel
 
@@ -15,6 +16,7 @@ class MessageFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val messageList = listOf(
+        MessageModel("Admin Desa", "Selamat datang di fitur pesan Bina Desa.", "https://avatar.iran.liara.run/public/12"),
         MessageModel("Alya",  "Halo! Apa kabar?",          "https://avatar.iran.liara.run/public/1"),
         MessageModel("Budi",  "Sudah makan?",              "https://avatar.iran.liara.run/public/2"),
         MessageModel("Citra", "Jangan lupa tugasnya ya!",  "https://avatar.iran.liara.run/public/3"),
@@ -43,9 +45,25 @@ class MessageFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Message"
         }
+        setHasOptionsMenu(true)
 
         val adapter = MessageAdapter(requireContext(), messageList)
         binding.listMessageItem.adapter = adapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.message_toolbar_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_tutorial -> {
+                val intent = Intent(requireContext(), TutorialMessageActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onDestroyView() {

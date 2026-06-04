@@ -6,10 +6,8 @@ import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nona_abstrak.databinding.ActivitySettingBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-
 class SettingActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySettingBinding
-
     private val menuItems = listOf(
         "Tentang Program Bina Desa",
         "Kebijakan Privasi",
@@ -17,7 +15,6 @@ class SettingActivity : AppCompatActivity() {
         "Bantuan",
         "Versi Aplikasi v1.0"
     )
-
     private val menuDescriptions = listOf(
         "Program ini bertujuan untuk membantu digitalisasi administrasi desa agar pelayanan masyarakat menjadi lebih cepat dan modern.",
         "Data pengguna dijaga dengan aman dan tidak dibagikan kepada pihak lain tanpa izin.",
@@ -25,19 +22,16 @@ class SettingActivity : AppCompatActivity() {
         "Hubungi kami di admin@regulasidesa.id untuk bantuan lebih lanjut.",
         "Aplikasi Bina Desa versi 1.0.0 - Dikembangkan oleh Politeknik Caltex Riau 2026."
     )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         // Toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             title = "Tentang Aplikasi"
             setDisplayHomeAsUpEnabled(true)
         }
-
         // ArrayAdapter
         val adapter = ArrayAdapter(
             this,
