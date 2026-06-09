@@ -1,4 +1,4 @@
-package com.example.nona_abstrak.tugaspertemuan3
+package com.example.nona_abstrak.tugasPertemuan3
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,10 +13,6 @@ class LoginActivityTugas3 : AppCompatActivity() {
         binding = ActivityLoginTugas3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val judul=intent.getStringExtra("Judul_Halaman")
-        val deskripsi=intent.getStringExtra("Description")
-        binding.JudulHalaman.text="$judul"
-        binding.Description.text="$deskripsi"
         binding.btnLogin.setOnClickListener {
             val intent = Intent(this, WelcomeActivityTugas3::class.java)
             startActivity(intent)

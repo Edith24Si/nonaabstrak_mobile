@@ -11,8 +11,8 @@ import com.example.nona_abstrak.MainActivity
 import com.example.nona_abstrak.R
 import com.example.nona_abstrak.databinding.ActivityHalamanUtamaBinding
 import com.example.nona_abstrak.databinding.ActivityLoginTugas3Binding
-import com.example.nona_abstrak.tugaspertemuan3.LoginActivityTugas3
-import com.example.nona_abstrak.tugaspertemuan3.WelcomeActivityTugas3
+import com.example.nona_abstrak.tugasPertemuan3.LoginActivityTugas3
+import com.example.nona_abstrak.tugasPertemuan3.WelcomeActivityTugas3
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class HalamanUtama : AppCompatActivity() {

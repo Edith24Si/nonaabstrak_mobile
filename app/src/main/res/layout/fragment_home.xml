@@ -10,7 +10,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#4CAF50"
+        android:background="#1A237E"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <androidx.appcompat.widget.Toolbar
@@ -39,7 +39,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Cari Data Desa"
+                android:hint="Cari Regulasi / Produk Hukum"
                 android:layout_marginBottom="12dp"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -66,14 +66,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Pertanian" />
+                    android:text="Peraturan Desa" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipPengumuman"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pengumuman" />
+                    android:text="Sosialisasi" />
             </com.google.android.material.chip.ChipGroup>
 
             <!-- Main Menu Grid -->
@@ -90,7 +90,7 @@
                     android:id="@+id/btnBumdes"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Bumdes"
+                    android:text="Legalitas"
                     android:drawableTop="@android:drawable/ic_menu_agenda"
                     app:layout_columnWeight="1"
                     app:cornerRadius="8dp" />
@@ -99,7 +99,7 @@
                     android:id="@+id/btnProfil"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Profil"
+                    android:text="Profil Hukum"
                     android:drawableTop="@android:drawable/ic_menu_myplaces"
                     app:layout_columnWeight="1"
                     app:cornerRadius="8dp" />
@@ -108,7 +108,7 @@
                     android:id="@+id/btnForum"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Forum"
+                    android:text="Aduan"
                     android:drawableTop="@android:drawable/ic_menu_send"
                     app:layout_columnWeight="1"
                     app:cornerRadius="8dp" />
@@ -117,7 +117,7 @@
                     android:id="@+id/btnWebView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Web Desa"
+                    android:text="JDIH Desa"
                     android:drawableTop="@android:drawable/ic_menu_mapmode"
                     app:layout_columnWeight="1"
                     app:cornerRadius="8dp" />
@@ -126,7 +126,7 @@
                     android:id="@+id/btnPertemuan10"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Pertemuan 10"
+                    android:text="Modul 10"
                     android:drawableTop="@android:drawable/ic_menu_today"
                     app:layout_columnWeight="1"
                     app:cornerRadius="8dp" />
@@ -151,16 +151,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fakta Unik Desa (API Demo)"
+                        android:text="Edukasi Hukum Hari Ini"
                         android:textStyle="bold"
-                        android:textColor="#2E7D32" />
+                        android:textColor="#1A237E" />
 
                     <TextView
                         android:id="@+id/tvCatFact"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Loading fact..."
+                        android:text="Memuat informasi hukum..."
                         android:textSize="16sp"
                         android:textColor="#333333"
                         android:gravity="center" />
@@ -171,7 +171,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
-                        android:text="Refresh"
+                        android:text="Refresh Info"
                         app:icon="@android:drawable/stat_notify_sync" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -182,7 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Galeri Kegiatan Desa"
+                android:text="Dokumentasi Sosialisasi Hukum"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#333333"
@@ -203,7 +203,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Tentang Aplikasi"
+                android:text="Panduan Aplikasi"
                 app:icon="@android:drawable/ic_menu_info_details"
                 app:cornerRadius="8dp"
                 app:layout_constraintTop_toBottomOf="@id/rvGallery" />
@@ -213,7 +213,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Keluar Aplikasi"
+                android:text="Keluar Sistem"
                 android:backgroundTint="#C62828"
                 app:icon="@android:drawable/ic_menu_close_clear_cancel"
                 app:cornerRadius="8dp"

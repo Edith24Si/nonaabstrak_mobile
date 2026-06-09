@@ -1,4 +1,4 @@
-package com.example.nona_abstrak.tugaspertemuan3
+package com.example.nona_abstrak.tugasPertemuan3
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,10 +12,10 @@ class WelcomeActivityTugas3 : AppCompatActivity() {
         binding = ActivityWelcomeTugas3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val judul=intent.getStringExtra("Judul_Halaman")
-        val deskripsi=intent.getStringExtra("Description")
-        binding.JudulHalaman.text="$judul"
-        binding.Description.text="$deskripsi"
+        val judul = intent.getStringExtra("Judul_Halaman")
+        val deskripsi = intent.getStringExtra("Description")
+        binding.JudulHalaman.text = "$judul"
+        binding.Description.text = "$deskripsi"
 
         binding.btnKembali.setOnClickListener {
             finish()
