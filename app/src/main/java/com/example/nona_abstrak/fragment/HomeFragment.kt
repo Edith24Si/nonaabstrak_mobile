@@ -16,7 +16,7 @@ import com.example.nona_abstrak.databinding.FragmentHomeBinding
 import com.example.nona_abstrak.pertemuan5.WebViewActivity
 import com.example.nona_abstrak.pertemuan6.AuthActivity
 import com.example.nona_abstrak.pertemuan_9.SettingActivity
-import com.example.nona_abstrak.pertemuan_10.TenthActivity
+import com.example.nona_abstrak.pertemuan10.TenthActivity
 import com.example.nona_abstrak.photo.PhotoAdapter
 import com.google.android.material.chip.Chip
 import kotlinx.coroutines.launch

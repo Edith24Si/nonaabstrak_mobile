@@ -10,21 +10,25 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.nona_abstrak.databinding.FragmentTabCBinding
 
 class TabCFragment : Fragment() {
-
     private var _binding: FragmentTabCBinding? = null
     private val binding get() = _binding!!
 
-    private val legalProductList = listOf(
-        ProductModel("Perdes No. 1 2024 tentang APBDes", "Status: Berlaku", "https://picsum.photos/seed/legal1/400/300"),
-        ProductModel("Perkades No. 2 2024 - Tata Tertib", "Status: Berlaku", "https://picsum.photos/seed/legal2/400/300"),
-        ProductModel("SK Kades No. 15 - Posyandu", "Status: Berlaku", "https://picsum.photos/seed/legal3/400/300"),
-        ProductModel("Perdes No. 3 2023 tentang BUMDes", "Status: Berlaku", "https://picsum.photos/seed/legal4/400/300"),
-        ProductModel("Perkades No. 5 2023 - Kebersihan", "Status: Berlaku", "https://picsum.photos/seed/legal5/400/300"),
-        ProductModel("SK Kades No. 20 - Karang Taruna", "Status: Berlaku", "https://picsum.photos/seed/legal6/400/300"),
-        ProductModel("Perdes No. 4 2023 tentang Irigasi", "Status: Berlaku", "https://picsum.photos/seed/legal7/400/300"),
-        ProductModel("Perdes No. 2 2023 - Batas Wilayah", "Status: Berlaku", "https://picsum.photos/seed/legal8/400/300"),
-        ProductModel("SK Kades No. 10 - Satgas COVID", "Status: Tidak Berlaku", "https://picsum.photos/seed/legal9/400/300"),
-        ProductModel("Perkades No. 1 2024 - Jam Malam", "Status: Berlaku", "https://picsum.photos/seed/legal10/400/300")
+    private val productList = listOf(
+        ProductModel("Pupuk Organik Desa", "Rp 50.000", "https://picsum.photos/seed/pupuk/400/300"),
+        ProductModel("Beras Merah Cianjur", "Rp 85.000", "https://picsum.photos/seed/beras/400/300"),
+        ProductModel("Madu Hutan Asli", "Rp 120.000", "https://picsum.photos/seed/madu/400/300"),
+        ProductModel("Kopi Robusta Desa", "Rp 45.000", "https://picsum.photos/seed/kopi/400/300"),
+        ProductModel("Keripik Singkong", "Rp 15.000", "https://picsum.photos/seed/keripik/400/300"),
+        ProductModel("Gula Semut Kelapa", "Rp 25.000", "https://picsum.photos/seed/gula/400/300"),
+        ProductModel("Teh Hijau Alami", "Rp 35.000", "https://picsum.photos/seed/teh/400/300"),
+        ProductModel("Minyak Kelapa Mandiri", "Rp 60.000", "https://picsum.photos/seed/minyak/400/300"),
+        ProductModel("Sambal Tradisional", "Rp 20.000", "https://picsum.photos/seed/sambal/400/300"),
+        ProductModel("Telur Ayam Kampung", "Rp 3.000", "https://picsum.photos/seed/telur/400/300"),
+        ProductModel("Bibit Tanaman Buah", "Rp 25.000", "https://picsum.photos/seed/bibit/400/300"),
+        ProductModel("Cangkul Baja Kuat", "Rp 75.000", "https://picsum.photos/seed/cangkul/400/300"),
+        ProductModel("Caping Petani", "Rp 30.000", "https://picsum.photos/seed/caping/400/300"),
+        ProductModel("Sepatu Boot Karet", "Rp 55.000", "https://picsum.photos/seed/boot/400/300"),
+        ProductModel("Semprotan Hama", "Rp 150.000", "https://picsum.photos/seed/semprot/400/300")
     )
 
     override fun onCreateView(
@@ -38,8 +42,8 @@ class TabCFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = ProductAdapter(legalProductList) { selectedItem ->
-            Toast.makeText(requireContext(), "Membuka: ${selectedItem.name}", Toast.LENGTH_SHORT).show()
+        val adapter = ProductAdapter(productList) { selectedItem ->
+            Toast.makeText(requireContext(), "Melihat detail ${selectedItem.name}", Toast.LENGTH_SHORT).show()
         }
 
         binding.rvProducts.apply {
