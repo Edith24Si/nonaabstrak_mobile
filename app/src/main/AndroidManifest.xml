@@ -33,6 +33,9 @@
         <!-- Base -->
         <activity android:name=".BaseActivity" android:exported="false" />
 
+        <!-- Note -->
+        <activity android:name=".note.NoteFormActivity" android:exported="false" />
+
         <!-- Pertemuan 11 -->
         <activity android:name=".fragment.tutorial.TutorialMessageActivity" android:exported="false" />
 
