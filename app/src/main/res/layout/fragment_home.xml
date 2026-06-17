@@ -130,6 +130,15 @@
                     android:drawableTop="@android:drawable/ic_menu_today"
                     app:layout_columnWeight="1"
                     app:cornerRadius="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPertemuan13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Modul 13"
+                    android:drawableTop="@android:drawable/ic_menu_camera"
+                    app:layout_columnWeight="1"
+                    app:cornerRadius="8dp" />
             </androidx.gridlayout.widget.GridLayout>
 
             <!-- Cat Fact Section -->

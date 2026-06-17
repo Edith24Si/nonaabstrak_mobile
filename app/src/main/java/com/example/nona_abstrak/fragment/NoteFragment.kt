@@ -9,11 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.nona_abstrak.Note.NoteFormActivity
 import com.example.nona_abstrak.data.AppDatabase
 import com.example.nona_abstrak.data.entity.NoteEntity
 import com.example.nona_abstrak.databinding.FragmentNoteBinding
 import com.example.nona_abstrak.note.NoteAdapter
-import com.example.nona_abstrak.note.NoteFormActivity
+
 import kotlinx.coroutines.launch
 
 class NoteFragment : Fragment() {

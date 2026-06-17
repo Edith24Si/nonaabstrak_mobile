@@ -46,10 +46,8 @@ class TabCFragment : Fragment() {
             Toast.makeText(requireContext(), "Melihat detail ${selectedItem.name}", Toast.LENGTH_SHORT).show()
         }
 
-        binding.rvProducts.apply {
-            layoutManager = GridLayoutManager(requireContext(), 2)
-            this.adapter = adapter
-        }
+        binding.rvProducts.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvProducts.adapter = adapter
     }
 
     override fun onDestroyView() {

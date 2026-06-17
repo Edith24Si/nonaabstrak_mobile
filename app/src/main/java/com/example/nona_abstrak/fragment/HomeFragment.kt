@@ -62,6 +62,10 @@ class HomeFragment : Fragment() {
         binding.btnPertemuan10.setOnClickListener {
             startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
+        binding.btnPertemuan13.setOnClickListener {
+            val intent = Intent(requireContext(), com.example.nona_abstrak.pertemuan13.ThirteenthActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.btnTentangAplikasi.setOnClickListener {
             startActivity(Intent(requireContext(), SettingActivity::class.java))
